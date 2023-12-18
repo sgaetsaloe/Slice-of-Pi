@@ -1,0 +1,260 @@
+<!-- Final Project - memorize -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>memorize | FINAL PROJECT</title>
+        <link href="styles.css" rel="stylesheet">
+        <style>
+            .memorize{
+                height: 600px;;
+                width: 100%;
+                inline-size: 100%;
+                line-height: 100px;
+                overflow-wrap: break-word;
+                background-color:white;
+                padding: 0;
+                margin: 0;
+            }
+
+            h3 {
+                padding: 0;
+                padding-bottom: 20px;
+                padding-top: 50px;
+                margin: 0;
+                text-align: center;
+                color: #7343c4;
+                font-size: 200px;
+                font-family: "Roboto_Slab";
+            }
+
+            p {
+                text-align: center;
+                color: #7343c4;
+                font-size: 25px;
+                font-family: "Roboto_light";
+                padding: 0;
+                margin: 0;
+            }
+
+            #test{
+                text-align: center;
+                padding: 0;
+                margin: 0;
+            }
+
+            #address {
+                border-radius: 40px;
+                margin: 0;
+                width: 150px;
+                padding: 0px 40px;
+                border: 0;
+                background-color: #7343c4;
+                font-size: 30px;
+                color: white;
+                font-family: "Roboto_Slab";
+            }
+
+            #userTry {
+                border-radius: 40px;
+                width: 150px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 20px 40px;
+                border: 0;
+                background-color: #7343c4;
+                font-size: 30px;
+                color: white;
+                font-family: "Roboto_Slab";
+            }
+
+            #subButton {
+                border-radius: 100px;
+                border: solid;
+                border-color: #7343c4;
+                width: 100px;
+                height: 75px;
+                padding: 10px 0;
+                background-color: white;
+                font-size: 20px;
+                color: #7343c4;
+                font-family: "Roboto_Slab";
+            }
+
+            #subButton:hover {
+                border-radius: 40px;
+                border: solid;
+                border-color: white;
+                width: 100px;
+                height: 75px;
+                padding: 10px 0;
+                background-color: #7343c4;
+                font-size: 20px;
+                color: #FD98AE;
+                font-family: "Roboto_Slab";
+            }
+
+            #result {
+                text-align: center;
+                color: #7343c4;
+                font-size: 25px;
+                font-family: "Roboto_light";
+                padding: 15px;
+                margin: 15px;
+            }
+
+            .certificatSub {
+                text-align: center;
+                margin-right: auto;
+                margin-left: auto;
+                background-color: #A77EEE;
+                color: white;
+                border: solid;
+                border-radius: 40px;
+                width: 800px;
+                height: 400px;
+                font-family: "Roboto_light";
+                margin-bottom: 20px;
+            }
+
+            h4 {
+                text-align: center;
+                margin: 0;
+                padding: 20px 0;
+                color: white;
+                font-size: 60px;
+                font-family: "Roboto_Slab";
+
+            }
+
+            #submitButton {
+                background-color: #7343c4;
+                border-radius: 40px;
+                border: solid;
+                border-color: white;
+                color: white;
+                height: 45px;
+                width: 150px;
+                font-family: "Roboto_Slab";
+            }
+
+            #submitButton:hover {
+                background-color: #A77EEE;
+                border-radius: 40px;
+                border: solid;
+                border-color: white;
+                color: white;
+                height: 45px;
+                width: 150px;
+                font-family: "Roboto_Slab";
+            }
+
+            .form-row{
+                margin: 20px 0px;
+            }
+
+            ::placeholder {
+            color: #A77EEE;
+            }
+
+            #name{
+                border: solid;
+                border-color: white;
+                border-radius: 20px;
+                padding: 5px;
+            }
+
+            #date{
+                border: solid;
+                border-color: white;
+                border-radius: 20px;
+                padding: 5px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logoclass">
+                <img id="logo" src="images/logo.png" alt="Slice of Pie Logo">
+                <h1>Slice of Pi</h1>
+                <h2>a new way to learn</h2>
+            </div>
+            <div id="nav">
+                <a href="index.html">Home</a>
+                <a href="Memorize.html" class="active">Memorize</a>
+                <a href="Learn.html">Learn</a>
+            </div>
+            
+        </div> <!-- end of header -->
+        <div class="main">
+            <div class="memorize">
+                <h3>π:</h3>
+                <p>Try input the first 10 digits of Pi!</p>
+                <form id='nameForm'>
+                    <div id="test">
+                        <input id='userTry' type='text' placeholder="3.14...">
+                        <button id='subButton' type='button'>Check!</button>
+                    </div>
+                </form>
+                <div>
+                    <p id='result'></p></div>
+                </div>
+            </div>
+
+            <script>
+                function CheckPi() {
+                    var userTry = document.getElementById('userTry').value;
+                    var result = document.getElementById('result');
+                    if (userTry == 3.141592653) {
+                        result.textContent = 'Yay! thats correct!';
+                    } else {
+                        result.textContent = 'Not quite, try again!';
+                    }
+                }
+                var subButton = document.getElementById('subButton');
+                subButton.addEventListener('click', CheckPi, false); 
+    
+            </script>
+
+            <div class="certificatSub">
+                <form action="confirmation.html" target="_blank">
+                    <h4>Make it Official!</h4>
+                    <div class="form-row">
+                        <label for="name" class="main-label">Name:</label> 
+                        <input id="name" type="text" placeholder="Martha Jones" required>
+
+                    </div>
+
+                    <div class="form-row">
+                        <label for="date" class="main-label">Date:</label> 
+                        <input id="date" type="text" placeholder="14th of March 2021" required>
+
+                    </div>
+                    <div class="form-row">
+                        <label class="main-label">Did you memorize all 10 digits?</label>
+                        <input type="radio" value="yes" name="yes" required id="yes"> <label for="yes">YES</label>
+                        <input type="radio" value="no" name="no" id="no"> <label for="no">no</label>
+                    </div>
+                    <div class="form-row">
+                        <input type="checkbox" value="tc" name="tc" required id="tc"> <label for="tc"> terms and conditions</label>
+                    </div>
+                    <div class="form-row">
+                        <button type="Submit" id="submitButton">Get My Certificate!</button>
+                    </div>
+                </form>
+                
+                
+            </div>
+
+            <div class="clearfloat"></div>
+
+        <!-- </div> main div -->
+        
+        
+        <div class="footer">
+            <p class="foot">Website By Sesame Gaetsaloe</p>
+
+        </div>
+
+    </body>
+</html>
